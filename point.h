@@ -12,10 +12,15 @@ Location of organism: [69 7],   Closest food target : [55 38]
 Location of organism: [10 94],  Closest food target : [18 76]
 Location of organism: [36 27],  Closest food target : [55 38]
 */
-struct Point
+typedef struct
 {
   int x;
   int y;
-} ;
+} Point;
 
-void get_closest_food(struct Point food_points[], int points_length, struct Point current_location, struct Point *closest_food_location);
+#define FOOD_POINTS {{18, 76}, {19, 66}, {89, 57}, {9, 71}, {55, 38}}
+#define POINTS_LENGTH 5
+#define ITERATE(start, end) for(unsigned short index = start; index < end; index++)
+
+void get_closest_food(Point food_points[], unsigned points_length, Point current_location, Point *closest_food_location);
+unsigned get_distance(Point *, Point *);
