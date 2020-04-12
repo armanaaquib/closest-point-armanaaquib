@@ -23,4 +23,4 @@ typedef struct
 #define ITERATE(start, end) for(unsigned short index = start; index < end; index++)
 
 void get_closest_food(Point food_points[], unsigned points_length, Point current_location, Point *closest_food_location);
-unsigned get_distance(Point *, Point *);
+float get_distance(Point *, Point *);

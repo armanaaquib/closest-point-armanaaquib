@@ -2,17 +2,17 @@
 #include <math.h>
 #include "point.h"
 
-unsigned get_distance(Point *organism_location, Point *food_location)
+float get_distance(Point *organism_location, Point *food_location)
 {
-  unsigned horizontal_distance = abs(food_location->x - organism_location->x);
-  unsigned vertical_distance = abs(food_location->y - organism_location->y);
+  int horizontal_distance = abs(food_location->x - organism_location->x);
+  int vertical_distance = abs(food_location->y - organism_location->y);
 
-  return sqrt(pow(horizontal_distance, 2) + pow(vertical_distance, 2));
+  return hypot(horizontal_distance, vertical_distance);
 }
 
 void get_closest_food(Point food_points[], unsigned points_length, Point current_location, Point *closest_food_location)
 {
-  unsigned closest_distance, distance;
+  float closest_distance, distance;
 
   closest_distance = get_distance(&current_location, &food_points[0]);
   *closest_food_location = food_points[0];
