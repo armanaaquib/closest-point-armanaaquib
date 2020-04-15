@@ -12,6 +12,8 @@ Location of organism: [69 7],   Closest food target : [55 38]
 Location of organism: [10 94],  Closest food target : [18 76]
 Location of organism: [36 27],  Closest food target : [55 38]
 */
+
+#ifndef __POINT_H_
 typedef struct
 {
   int x;
@@ -24,3 +26,6 @@ typedef struct
 
 void get_closest_food(Point food_points[], unsigned points_length, Point current_location, Point *closest_food_location);
 double get_distance(Point, Point);
+
+#define __POINT_H_
+#endif
